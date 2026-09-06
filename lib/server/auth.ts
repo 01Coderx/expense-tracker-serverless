@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 import { headers } from "next/headers";
 import { User } from "./models/User";
 
-const JWT_SECRET = process.env.JWT_SECRET;
+const JWT_SECRET: string = process.env.JWT_SECRET ?? "";
 
 if (!JWT_SECRET) {
   throw new Error("JWT_SECRET environment variable is required.");
